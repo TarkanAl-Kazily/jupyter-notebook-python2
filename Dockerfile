@@ -21,6 +21,9 @@ RUN $CONDA_DIR/envs/python2/bin/python -m ipykernel install && \
 
 USER $NB_USER
 
+# Add jupyter settings
+ADD --chown=jovyan:users /.jupyter /home/$NB_USER/.jupyter 
+
 # Install and build jupyterlab extensions. Add more extensions here
 RUN jupyter labextension install jupyterlab_vim --no-build && \
     jupyter lab build && \

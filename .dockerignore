@@ -1,0 +1,4 @@
+# Allows for ignoring files to send to the docker
+.git*
+.dockerignore
+Dockerfile
